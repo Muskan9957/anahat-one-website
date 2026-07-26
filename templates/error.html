@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% set active_page = "error" %}
+
+{% block title %}Anahat One - {{ error_code }} Error{% endblock %}
+
+{% block body_class %}page-transition{% endblock %}
+
+{% block content %}
+<main id="main-content">
+    <section class="careers-hero" style="min-height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+        <div class="careers-hero-content hero-load-anim" style="margin-top: 0;">
+            <span class="hero-eyebrow">Error {{ error_code }}</span>
+            <h1 class="careers-headline">{{ error_title }}</h1>
+            <p class="careers-lead">{{ error_message }}</p>
+            <div style="margin-top: 3rem;">
+                <a href="/" class="btn btn-outline pill">Return Home</a>
+                <a href="/services" class="btn btn-primary pill" style="margin-left: 1rem;">Explore Ventures</a>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        document.body.classList.add('page-loaded');
+    });
+</script>
+{% endblock %}

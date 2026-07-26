@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% set active_page = "index" %}
+
+{% block title %}Anahat One - Home{% endblock %}
+
+{% block content %}
+<main id="main-content">
+
+    <!-- Cinematic Hero Section -->
+    <section class="cinematic-hero">
+
+        <!-- Background Manager (Lazy loading implemented via background image manipulation in CSS/JS if needed, but for now we keep inline for structure) -->
+        <div class="hero-bg-manager">
+            <div class="hero-bg-layer active" data-index="0" style="background-image: url('https://images.unsplash.com/photo-1618221118493-9cfa1a1c00da?auto=format&fit=crop&q=80&w=2000')"></div>
+            <div class="hero-bg-layer" data-index="1" style="background-image: url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&q=80&w=2000')"></div>
+            <div class="hero-bg-layer" data-index="2" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=2000')"></div>
+        </div>
+
+        <!-- Overlay -->
+        <div class="hero-overlay"></div>
+
+        <!-- Hero Copy -->
+        <div class="hero-content">
+            <h1 class="headline">Dominate Every Feed</h1>
+            <p class="lead-text">Experience the unified ecosystem of premium ventures under Anahat One.</p>
+        </div>
+
+        <!-- Carousel -->
+        <div class="hero-carousel-wrapper">
+            <div class="hero-carousel-track" id="carouselTrack">
+
+                <!-- Card 0: Stays -->
+                <div class="carousel-card active" data-index="0">
+                    <div class="card-inner">
+                        <span class="card-eyebrow">Hospitality</span>
+                        <h3>Stays</h3>
+                        <p>Curated luxury architecture and premium hospitality experiences designed to elevate your lifestyle.</p>
+                        <a href="/services/stays" class="btn btn-outline pill">Discover Details</a>
+                    </div>
+                </div>
+
+                <!-- Card 1: Trading -->
+                <div class="carousel-card" data-index="1">
+                    <div class="card-inner">
+                        <span class="card-eyebrow">Financial</span>
+                        <h3>Trading</h3>
+                        <p>Advanced algorithmic environments and institutional-grade financial market infrastructure.</p>
+                        <a href="/services/trading" class="btn btn-outline pill">Discover Details</a>
+                    </div>
+                </div>
+
+                <!-- Card 2: Hardware -->
+                <div class="carousel-card" data-index="2">
+                    <div class="card-inner">
+                        <span class="card-eyebrow">Engineering</span>
+                        <h3>Hardware</h3>
+                        <p>Precision robotics, intelligent manufacturing, and next-generation physical engineering.</p>
+                        <a href="/services/hardware" class="btn btn-outline pill">Discover Details</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <span class="section-eyebrow reveal-up">About Anahat One</span>
+            
+            <div class="about-grid">
+                <div class="about-vision reveal-up" style="transition-delay: 0.1s;">
+                    <h2>Our Vision</h2>
+                    <p>Anahat One is a forward-thinking collective built on the principle that the most impactful businesses are those that merge uncompromising design, advanced engineering, and sustainable scale. We do not just invest in the future; we build the infrastructure that will define it.</p>
+                </div>
+                
+                <div class="about-goals reveal-up" style="transition-delay: 0.2s;">
+                    <h2>Our Approach</h2>
+                    <p>Operating across luxury hospitality, institutional finance, and high-performance hardware, we maintain a singular focus on excellence. Each venture within the Anahat ecosystem operates independently while sharing a unified philosophy of long-term value creation and premium execution.</p>
+                    
+                    <a href="/services" class="btn btn-outline pill" style="margin-top: 2rem;">Explore Our Ventures &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+{% endblock %}

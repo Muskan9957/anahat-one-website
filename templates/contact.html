@@ -1,0 +1,222 @@
+{% extends "base.html" %}
+{% set active_page = "contact" %}
+
+{% block title %}Contact Us - Anahat One{% endblock %}
+
+{% block content %}
+<!-- Success Overlay -->
+<div class="form-success-overlay" id="contact-success-overlay">
+    <div class="success-content">
+        <h2 class="headline">Thank You</h2>
+        <p class="lead-text">Your message has been successfully received.<br><br>Our team will review your enquiry and get back to you as soon as possible.<br><br>We appreciate your interest in Anahat One.</p>
+        <div style="margin-top: 3rem;">
+            <a href="/" class="btn btn-outline pill">Return to Home</a>
+            <a href="/services" class="btn btn-primary pill" style="margin-left: 1rem;">Explore Our Ventures</a>
+        </div>
+    </div>
+</div>
+
+<!-- Main Content -->
+<main id="main-content" class="contact-page">
+
+    <!-- Hero Section -->
+    <section class="contact-hero fade-in-section">
+        <div class="contact-hero-content">
+            <h1 class="hero-headline">Contact Us</h1>
+            <p class="contact-lead">We'd love to hear from you. Whether you have a business enquiry, partnership opportunity, media request or general question, our team is here to help.</p>
+        </div>
+        <div class="scroll-indicator">
+            <span class="mouse-icon"></span>
+        </div>
+    </section>
+
+    <!-- Contact Info Cards -->
+    <section class="contact-info-section fade-in-section">
+        <div class="contact-container">
+            <div class="contact-cards">
+                
+                <!-- Card 1 -->
+                <div class="contact-card">
+                    <div class="card-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                    </div>
+                    <h3>General Enquiries</h3>
+                    <p class="card-desc">For general questions about Anahat One.</p>
+                    <div class="contact-links">
+                        <a href="mailto:hello@anahatone.com" class="contact-link"><span>📧</span> hello@anahatone.com</a>
+                        <a href="tel:+919876543210" class="contact-link"><span>📞</span> +91 98765 43210</a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="contact-card">
+                    <div class="card-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    </div>
+                    <h3>Business & Partnerships</h3>
+                    <p class="card-desc">Business collaborations, strategic partnerships and investment enquiries.</p>
+                    <div class="contact-links">
+                        <a href="mailto:partnerships@anahatone.com" class="contact-link"><span>📧</span> partnerships@anahatone.com</a>
+                        <a href="tel:+919876543211" class="contact-link"><span>📞</span> +91 98765 43211</a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="contact-card">
+                    <div class="card-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                    </div>
+                    <h3>Careers</h3>
+                    <p class="card-desc">Internships, recruitment and employment opportunities.</p>
+                    <div class="contact-links">
+                        <a href="mailto:careers@anahatone.com" class="contact-link"><span>📧</span> careers@anahatone.com</a>
+                        <a href="tel:+919876543212" class="contact-link"><span>📞</span> +91 98765 43212</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Layout Grid -->
+    <section class="contact-main-section fade-in-section">
+        <div class="contact-container contact-layout">
+            
+            <!-- Form Area -->
+            <div class="contact-form-area">
+                <form id="contactForm" action="/api/contact" method="POST" class="premium-form contact-form">
+                    
+                    <div class="form-row">
+                        <div class="input-wrapper full-width">
+                            <input type="text" id="name" name="name" placeholder=" " required>
+                            <label for="name">Full Name</label>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="input-wrapper full-width">
+                            <input type="email" id="email" name="email" placeholder=" " required>
+                            <label for="email">Email Address</label>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="input-wrapper full-width">
+                            <input type="text" id="company" name="company" placeholder=" ">
+                            <label for="company">Company / Organisation (Optional)</label>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="input-wrapper full-width">
+                            <select id="enquiry_type" name="enquiry_type" required aria-describedby="enquiry-helper-text">
+                                <option value="" disabled selected></option>
+                                <option value="General Enquiry">General Enquiry</option>
+                                <option value="Business Partnership">Business Partnership</option>
+                                <option value="Careers">Careers</option>
+                                <option value="Media">Media</option>
+                                <option value="Support">Support</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <label for="enquiry_type">Enquiry Type</label>
+                            <div class="helper-text" id="enquiry-helper-text" aria-live="polite"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="input-wrapper full-width">
+                            <input type="text" id="subject" name="subject" placeholder=" " required>
+                            <label for="subject">Subject</label>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="input-wrapper full-width">
+                            <textarea id="message" name="message" rows="6" placeholder=" " required></textarea>
+                            <label for="message">Message</label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary pill form-submit-btn">Send Message</button>
+                </form>
+            </div>
+
+            <!-- Sidebar Info -->
+            <div class="contact-sidebar">
+                
+                <div class="office-info-card">
+                    <span class="office-eyebrow">Head Office</span>
+                    <h3 class="office-title">Anahat One</h3>
+                    <p class="office-address">Prestige Tech Park<br>Bengaluru, Karnataka<br>India</p>
+                    
+                    <div class="office-hours">
+                        <span class="office-eyebrow">Office Hours</span>
+                        <p>Monday – Friday<br>9:00 AM – 6:00 PM (IST)</p>
+                    </div>
+                </div>
+
+                <div class="response-expectations">
+                    <h3>What You Can Expect</h3>
+                    <p>Once your message is submitted, it is routed to the appropriate team within Anahat One. We aim to respond as promptly as possible, although response times may vary depending on the nature of your enquiry.</p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section fade-in-section">
+        <div class="contact-container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            
+            <div class="faq-accordion">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">How quickly will I receive a response? <span class="faq-icon" aria-hidden="true">+</span></button>
+                    <div class="faq-answer">
+                        <p>We typically review and respond to general enquiries within 24–48 business hours. For complex partnership or career requests, it may take slightly longer for the appropriate team to provide a detailed response.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">How can I enquire about partnerships? <span class="faq-icon" aria-hidden="true">+</span></button>
+                    <div class="faq-answer">
+                        <p>Please select "Business Partnership" from the Enquiry Type dropdown in the form above, or email our partnerships team directly at partnerships@anahatone.com. Include your company profile and collaboration proposal.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Where should I apply for internships or careers? <span class="faq-icon" aria-hidden="true">+</span></button>
+                    <div class="faq-answer">
+                        <p>You can visit our dedicated Careers page to view current open roles and submit an application with your resume and portfolio. You can also select "Careers" in the contact form above.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Can I submit more than one enquiry? <span class="faq-icon" aria-hidden="true">+</span></button>
+                    <div class="faq-answer">
+                        <p>Yes, but to ensure the fastest response, we recommend keeping separate topics in separate enquiries, selecting the appropriate Enquiry Type for each one.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">What types of businesses does Anahat One operate? <span class="faq-icon" aria-hidden="true">+</span></button>
+                    <div class="faq-answer">
+                        <p>Anahat One is a premium ecosystem operating across multiple sectors including Hospitality (Stays), Financial Infrastructure (Trading), and Precision Engineering (Hardware).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="contact-cta-section fade-in-section">
+        <div class="contact-container">
+            <h2>Let's Build Something Meaningful Together</h2>
+            <div class="cta-actions">
+                <a href="/services" class="btn btn-outline pill">Explore Our Ventures</a>
+                <a href="/careers" class="btn btn-primary pill">Careers</a>
+            </div>
+        </div>
+    </section>
+
+</main>
+{% endblock %}
