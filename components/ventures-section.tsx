@@ -125,7 +125,7 @@ const nuoveSlides = [
 
 function StaysSlideshow() {
   const [index, setIndex] = useState(0)
-  const [mounted, setMounted] = useState(false)
+  const [, setMounted] = useState(false)
 
   useEffect(() => {
     setMounted(true)
@@ -134,10 +134,6 @@ function StaysSlideshow() {
     }, 4000)
     return () => clearInterval(timer)
   }, [])
-
-  if (!mounted) {
-    return <div className="h-full min-h-[350px] w-full bg-muted" />
-  }
 
   const prevSlide = (e: React.MouseEvent) => {
     e.preventDefault()
@@ -159,6 +155,12 @@ function StaysSlideshow() {
           key={src}
           src={src}
           alt={`Listing room photo ${i + 1}`}
+          /* Stacked slides sit at opacity:0, and browsers skip lazy-loading
+             invisible images — so lazy would leave later slides blank. Load
+             them all, but only the first at high priority so it paints fast
+             and the other 13 stream in behind it. */
+          fetchPriority={i === 0 ? "high" : "low"}
+          decoding="async"
           className={`absolute inset-0 h-full w-full object-cover transition-all duration-1000 ${
             i === index ? "opacity-100 z-10 scale-100" : "opacity-0 z-0 scale-105"
           }`}
@@ -218,7 +220,7 @@ const nuoveImages = [
 
 function NuoveSlideshow() {
   const [index, setIndex] = useState(0)
-  const [mounted, setMounted] = useState(false)
+  const [, setMounted] = useState(false)
 
   useEffect(() => {
     setMounted(true)
@@ -227,10 +229,6 @@ function NuoveSlideshow() {
     }, 4500)
     return () => clearInterval(timer)
   }, [])
-
-  if (!mounted) {
-    return <div className="h-full min-h-[380px] w-full bg-[#0D0A14]" />
-  }
 
   const prevSlide = (e?: React.MouseEvent) => {
     if (e) {
@@ -258,6 +256,11 @@ function NuoveSlideshow() {
             key={img.src}
             src={img.src}
             alt={img.title}
+            /* First slide at high priority so the panel is never empty; the
+               rest load at low priority. (Not lazy: opacity:0 slides never
+               trigger lazy loading, which would leave later slides blank.) */
+            fetchPriority={i === 0 ? "high" : "low"}
+            decoding="async"
             className={`absolute inset-0 w-full h-full object-contain object-center transition-all duration-700 ${
               i === index ? "opacity-100 z-10" : "opacity-0 z-0"
             }`}
