@@ -198,7 +198,9 @@ function StaysSlideshow() {
               e.stopPropagation()
               setIndex(i)
             }}
-            className={`h-1.5 rounded-full transition-all cursor-pointer ${
+            /* after: pseudo-element widens the touch area to ~30px without
+               changing how the dot looks — 6px dots are unusable on a phone. */
+            className={`relative h-1.5 rounded-full transition-all cursor-pointer after:absolute after:content-[''] after:-inset-y-3 after:-inset-x-1 ${
               i === index ? "bg-white w-4" : "bg-white/40 w-1.5"
             }`}
             aria-label={`Go to slide ${i + 1}`}
@@ -295,7 +297,8 @@ function NuoveSlideshow() {
             key={i}
             type="button"
             onClick={(e) => { e.preventDefault(); e.stopPropagation(); setIndex(i) }}
-            className={`h-1.5 rounded-full transition-all cursor-pointer ${
+            /* Widened touch area (see StaysSlideshow) — visual size unchanged. */
+            className={`relative h-1.5 rounded-full transition-all cursor-pointer after:absolute after:content-[''] after:-inset-y-3 after:-inset-x-1 ${
               i === index ? "bg-white w-5" : "bg-white/35 w-1.5 hover:bg-white/60"
             }`}
             aria-label={`Go to slide ${i + 1}`}
