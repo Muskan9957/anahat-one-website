@@ -57,7 +57,7 @@ export function HeroSection() {
             >
               Anahata: The Heart Center
             </a>
-            ), thoughtful software (
+            ) and thoughtful SAAS products (
             <a 
               href="https://nuove.in" 
               target="_blank" 
@@ -66,7 +66,7 @@ export function HeroSection() {
             >
               nuove.in
             </a>
-            ), and honest hardware — built by people who genuinely care about the ones they serve.
+            ) — built by people who genuinely care about the ones they serve.
           </p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
             <Button size="lg" nativeButton={false} render={<a href="#ventures">Explore our ventures</a>} />
