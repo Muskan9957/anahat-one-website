@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Background Options — Tech & Hospitality</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#080810; font-family: system-ui, sans-serif; color:#fff; }
+  .header { text-align:center; padding:50px 20px 36px; }
+  .header h1 { font-size:1.8rem; font-weight:300; letter-spacing:0.05em; color:#f0ece6; }
+  .header p  { margin-top:6px; color:#666; font-size:0.88rem; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(460px,1fr)); gap:3px; }
+  .option { position:relative; height:400px; overflow:hidden; }
+  .label {
+    position:absolute; bottom:0; left:0; right:0; z-index:10;
+    padding:24px 28px 20px;
+    background:linear-gradient(to top, rgba(6,5,12,0.97) 0%, rgba(6,5,12,0.5) 60%, transparent 100%);
+  }
+  .num  { font-size:9px; letter-spacing:0.35em; color:#c9924f; text-transform:uppercase; margin-bottom:5px; }
+  .label h2 { font-size:1.1rem; font-weight:400; color:#f0ece6; margin-bottom:3px; }
+  .label p  { font-size:0.77rem; color:#777; line-height:1.55; }
+  .badge {
+    display:inline-block; margin-top:9px; padding:3px 9px;
+    border:1px solid rgba(201,146,79,0.35); border-radius:999px;
+    font-size:8.5px; letter-spacing:0.18em; color:#c9924f; text-transform:uppercase;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>More Background Options</h1>
+  <p>Crafted for a Tech &amp; Hospitality brand — warm, premium &amp; alive</p>
+</div>
+
+<div class="grid">
+
+  <!-- ═══════════════════════════════════════════════
+       OPTION 5: STARFIELD / CONSTELLATION NIGHT SKY
+  ═══════════════════════════════════════════════ -->
+  <div class="option" id="opt5">
+    <canvas id="c5" style="position:absolute;inset:0;width:100%;height:100%"></canvas>
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 80%, rgba(201,146,79,0.08) 0%, transparent 65%)"></div>
+    <div class="label">
+      <div class="num">Option 05</div>
+      <h2>Constellation Night Sky</h2>
+      <p>Stars gently twinkle and form constellation lines — evoking premium stays under open skies, with the precision of a navigation chart.</p>
+      <span class="badge">Hospitality · Romantic · Refined</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════
+       OPTION 6: TOPOGRAPHIC / TERRAIN CONTOUR LINES
+  ═══════════════════════════════════════════════ -->
+  <div class="option" id="opt6">
+    <canvas id="c6" style="position:absolute;inset:0;width:100%;height:100%"></canvas>
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 30% 60%, rgba(180,110,60,0.07) 0%, transparent 60%)"></div>
+    <div class="label">
+      <div class="num">Option 06</div>
+      <h2>Topographic Terrain Lines</h2>
+      <p>Slowly morphing contour lines like a luxury property map — earthy, grounded, architectural. Suggests spaces, places &amp; curated living.</p>
+      <span class="badge">Earthy · Architectural · Boutique</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════
+       OPTION 7: FLOWING SILK / LIQUID WAVES
+  ═══════════════════════════════════════════════ -->
+  <div class="option" id="opt7">
+    <canvas id="c7" style="position:absolute;inset:0;width:100%;height:100%"></canvas>
+    <div class="label">
+      <div class="num">Option 07</div>
+      <h2>Flowing Silk Waves</h2>
+      <p>Soft undulating waves in warm amber and deep purple silk — like luxury bedding, slow and sensuous. Premium hospitality energy.</p>
+      <span class="badge">Luxury · Sensuous · Warm</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════
+       OPTION 8: CIRCUIT BOARD + WARM GLOW
+  ═══════════════════════════════════════════════ -->
+  <div class="option" id="opt8">
+    <canvas id="c8" style="position:absolute;inset:0;width:100%;height:100%"></canvas>
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 70% 40%, rgba(201,146,79,0.1) 0%, transparent 55%)"></div>
+    <div class="label">
+      <div class="num">Option 08</div>
+      <h2>Circuit Paths + Warm Glow</h2>
+      <p>Geometric circuit-board lines with glowing amber pulses travelling through them — unmistakably tech, with a warmth that says crafted.</p>
+      <span class="badge">Tech · Precise · Human</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════
+       OPTION 9: BREATHING RADIAL RINGS
+  ═══════════════════════════════════════════════ -->
+  <div class="option" id="opt9">
+    <div style="position:absolute;inset:0;background:#05050e;"></div>
+    <canvas id="c9" style="position:absolute;inset:0;width:100%;height:100%"></canvas>
+    <div class="label">
+      <div class="num">Option 09</div>
+      <h2>Breathing Radial Rings</h2>
+      <p>Concentric rings expand and fade like a heartbeat — calm, meditative, suggests the warmth of a welcoming space and the rhythm of tech.</p>
+      <span class="badge">Calm · Welcoming · Minimal</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════
+       OPTION 10: FLOATING GEOMETRIC ROOMS / ISOMETRIC
+  ═══════════════════════════════════════════════ -->
+  <div class="option" id="opt10">
+    <div style="position:absolute;inset:0;background:linear-gradient(135deg,#07060f 0%,#0d0918 50%,#060610 100%)"></div>
+    <canvas id="c10" style="position:absolute;inset:0;width:100%;height:100%"></canvas>
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 40% 50%, rgba(201,146,79,0.06) 0%, transparent 60%)"></div>
+    <div class="label">
+      <div class="num">Option 10</div>
+      <h2>Drifting Geometric Planes</h2>
+      <p>Translucent rectangular planes slowly drift and rotate in 3D space — like architectural floor plans dissolving into code. Tech meets spaces.</p>
+      <span class="badge">Architectural · 3D · Unique</span>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// ── util ──
+function fit(canvas, container) {
+  canvas.width  = container.offsetWidth;
+  canvas.height = container.offsetHeight;
+}
+
+// ══════════════════════════════════════════
+// OPT 5 — Constellation / Starfield
+// ══════════════════════════════════════════
+(function(){
+  const cvs = document.getElementById('c5');
+  const ct  = cvs.getContext('2d');
+  const box = document.getElementById('opt5');
+  fit(cvs, box);
+
+  const N = 90;
+  const stars = Array.from({length: N}, () => ({
+    x: Math.random() * cvs.width,
+    y: Math.random() * cvs.height,
+    r: Math.random() * 1.2 + 0.3,
+    twinkle: Math.random() * Math.PI * 2,
+    speed: 0.015 + Math.random() * 0.02,
+    vx: (Math.random() - 0.5) * 0.08,
+    vy: (Math.random() - 0.5) * 0.08,
+  }));
+
+  function draw() {
+    ct.clearRect(0, 0, cvs.width, cvs.height);
+    ct.fillStyle = '#05040e';
+    ct.fillRect(0, 0, cvs.width, cvs.height);
+
+    stars.forEach(s => {
+      s.twinkle += s.speed;
+      s.x += s.vx; s.y += s.vy;
+      if (s.x < 0) s.x = cvs.width;
+      if (s.x > cvs.width) s.x = 0;
+      if (s.y < 0) s.y = cvs.height;
+      if (s.y > cvs.height) s.y = 0;
+      const alpha = 0.4 + 0.5 * Math.abs(Math.sin(s.twinkle));
+      ct.beginPath();
+      ct.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+      ct.fillStyle = `rgba(240,230,210,${alpha})`;
+      ct.fill();
+    });
+
+    // Constellation lines between nearby stars
+    for (let i = 0; i < stars.length; i++) {
+      for (let j = i + 1; j < stars.length; j++) {
+        const dx = stars[i].x - stars[j].x;
+        const dy = stars[i].y - stars[j].y;
+        const d = Math.sqrt(dx*dx + dy*dy);
+        if (d < 85) {
+          ct.beginPath();
+          ct.moveTo(stars[i].x, stars[i].y);
+          ct.lineTo(stars[j].x, stars[j].y);
+          ct.strokeStyle = `rgba(201,146,79,${(1-d/85)*0.18})`;
+          ct.lineWidth = 0.5;
+          ct.stroke();
+        }
+      }
+    }
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+// ══════════════════════════════════════════
+// OPT 6 — Topographic Lines
+// ══════════════════════════════════════════
+(function(){
+  const cvs = document.getElementById('c6');
+  const ct  = cvs.getContext('2d');
+  const box = document.getElementById('opt6');
+  fit(cvs, box);
+  let t = 0;
+
+  function noise(x, y, t) {
+    return Math.sin(x * 0.012 + t * 0.4) * Math.cos(y * 0.015 - t * 0.3)
+         + Math.sin(x * 0.007 - t * 0.2) * Math.sin(y * 0.009 + t * 0.5)
+         + Math.cos((x + y) * 0.008 + t * 0.35) * 0.5;
+  }
+
+  function draw() {
+    ct.fillStyle = '#060510';
+    ct.fillRect(0, 0, cvs.width, cvs.height);
+
+    const levels = 10;
+    for (let lv = 0; lv < levels; lv++) {
+      const threshold = -1 + (lv / levels) * 2;
+      const step = 6;
+      ct.beginPath();
+      for (let y = 0; y < cvs.height; y += step) {
+        let inContour = false;
+        for (let x = 0; x < cvs.width; x += step) {
+          const v = noise(x, y, t);
+          const above = v > threshold;
+          if (above !== inContour) {
+            if (!inContour) ct.moveTo(x, y);
+            else ct.lineTo(x, y);
+            inContour = above;
+          }
+        }
+      }
+      const warm = lv < levels / 2;
+      const alpha = 0.06 + (lv / levels) * 0.1;
+      ct.strokeStyle = warm
+        ? `rgba(201,146,79,${alpha})`
+        : `rgba(140,100,180,${alpha})`;
+      ct.lineWidth = 0.8;
+      ct.stroke();
+    }
+    t += 0.004;
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+// ══════════════════════════════════════════
+// OPT 7 — Flowing Silk Waves
+// ══════════════════════════════════════════
+(function(){
+  const cvs = document.getElementById('c7');
+  const ct  = cvs.getContext('2d');
+  const box = document.getElementById('opt7');
+  fit(cvs, box);
+  let t = 0;
+
+  function draw() {
+    ct.fillStyle = 'rgba(5,4,14,0.25)';
+    ct.fillRect(0, 0, cvs.width, cvs.height);
+
+    const waves = [
+      { color: [201,146,79],  amp: 55, freq: 0.008, speed: 0.6, yBase: 0.3, alpha: 0.12 },
+      { color: [120, 60,200], amp: 70, freq: 0.006, speed: 0.4, yBase: 0.5, alpha: 0.10 },
+      { color: [201,146,79],  amp: 40, freq: 0.012, speed: 0.8, yBase: 0.7, alpha: 0.09 },
+      { color: [80, 40,160],  amp: 80, freq: 0.005, speed: 0.3, yBase: 0.9, alpha: 0.08 },
+      { color: [220,170,100], amp: 35, freq: 0.015, speed: 1.0, yBase: 0.15, alpha: 0.07 },
+    ];
+
+    waves.forEach(w => {
+      ct.beginPath();
+      const baseY = cvs.height * w.yBase;
+      ct.moveTo(0, baseY);
+      for (let x = 0; x <= cvs.width; x += 2) {
+        const y = baseY + Math.sin(x * w.freq + t * w.speed) * w.amp
+                        + Math.sin(x * w.freq * 1.7 - t * w.speed * 0.6) * (w.amp * 0.4);
+        ct.lineTo(x, y);
+      }
+      ct.lineTo(cvs.width, cvs.height + 10);
+      ct.lineTo(0, cvs.height + 10);
+      ct.closePath();
+      const [r,g,b] = w.color;
+      const grad = ct.createLinearGradient(0, 0, cvs.width, 0);
+      grad.addColorStop(0,   `rgba(${r},${g},${b},0)`);
+      grad.addColorStop(0.3, `rgba(${r},${g},${b},${w.alpha})`);
+      grad.addColorStop(0.7, `rgba(${r},${g},${b},${w.alpha})`);
+      grad.addColorStop(1,   `rgba(${r},${g},${b},0)`);
+      ct.fillStyle = grad;
+      ct.fill();
+    });
+
+    t += 0.012;
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+// ══════════════════════════════════════════
+// OPT 8 — Circuit Board + Pulse
+// ══════════════════════════════════════════
+(function(){
+  const cvs = document.getElementById('c8');
+  const ct  = cvs.getContext('2d');
+  const box = document.getElementById('opt8');
+  fit(cvs, box);
+
+  const W = cvs.width, H = cvs.height;
+  const GRID = 38;
+  const nodes = [];
+  const edges = [];
+
+  // Build grid nodes
+  for (let x = GRID; x < W; x += GRID) {
+    for (let y = GRID; y < H; y += GRID) {
+      if (Math.random() > 0.35) nodes.push({x, y});
+    }
+  }
+
+  // Connect nearby nodes
+  nodes.forEach((a, i) => {
+    nodes.forEach((b, j) => {
+      if (i >= j) return;
+      const dx = a.x - b.x, dy = a.y - b.y;
+      const d = Math.sqrt(dx*dx + dy*dy);
+      if (d < GRID * 1.5 && Math.random() > 0.45) {
+        edges.push({a, b, pulse: Math.random(), speed: 0.005 + Math.random() * 0.008});
+      }
+    });
+  });
+
+  function draw() {
+    ct.fillStyle = 'rgba(5,4,13,1)';
+    ct.fillRect(0, 0, W, H);
+
+    // Draw edges
+    edges.forEach(e => {
+      e.pulse = (e.pulse + e.speed) % 1;
+      ct.beginPath();
+      ct.moveTo(e.a.x, e.a.y);
+      ct.lineTo(e.b.x, e.b.y);
+      ct.strokeStyle = 'rgba(201,146,79,0.1)';
+      ct.lineWidth = 0.7;
+      ct.stroke();
+
+      // Travelling pulse dot
+      const px = e.a.x + (e.b.x - e.a.x) * e.pulse;
+      const py = e.a.y + (e.b.y - e.a.y) * e.pulse;
+      const grd = ct.createRadialGradient(px, py, 0, px, py, 6);
+      grd.addColorStop(0, 'rgba(201,146,79,0.9)');
+      grd.addColorStop(1, 'rgba(201,146,79,0)');
+      ct.beginPath();
+      ct.arc(px, py, 6, 0, Math.PI * 2);
+      ct.fillStyle = grd;
+      ct.fill();
+    });
+
+    // Draw nodes
+    nodes.forEach(n => {
+      ct.beginPath();
+      ct.arc(n.x, n.y, 2, 0, Math.PI * 2);
+      ct.fillStyle = 'rgba(201,146,79,0.5)';
+      ct.fill();
+    });
+
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+// ══════════════════════════════════════════
+// OPT 9 — Breathing Radial Rings
+// ══════════════════════════════════════════
+(function(){
+  const cvs = document.getElementById('c9');
+  const ct  = cvs.getContext('2d');
+  const box = document.getElementById('opt9');
+  fit(cvs, box);
+  let t = 0;
+
+  const CX = cvs.width * 0.5;
+  const CY = cvs.height * 0.52;
+  const NUM_RINGS = 9;
+
+  function draw() {
+    ct.fillStyle = 'rgba(5,4,14,0.18)';
+    ct.fillRect(0, 0, cvs.width, cvs.height);
+
+    for (let i = 0; i < NUM_RINGS; i++) {
+      const phase = t - i * 0.38;
+      const r     = 28 + i * 32 + Math.sin(phase) * 10;
+      const alpha = (0.06 + 0.06 * Math.sin(phase + 1)) * (1 - i / NUM_RINGS);
+
+      ct.beginPath();
+      ct.arc(CX, CY, r, 0, Math.PI * 2);
+      // Alternate warm and cool
+      const warm = i % 3 === 0;
+      ct.strokeStyle = warm
+        ? `rgba(201,146,79,${alpha * 1.8})`
+        : `rgba(120,80,200,${alpha})`;
+      ct.lineWidth = warm ? 1.2 : 0.7;
+      ct.stroke();
+    }
+
+    // Centre glow
+    const grd = ct.createRadialGradient(CX, CY, 0, CX, CY, 40);
+    grd.addColorStop(0, `rgba(201,146,79,${0.15 + 0.1 * Math.sin(t)})`);
+    grd.addColorStop(1, 'rgba(201,146,79,0)');
+    ct.beginPath();
+    ct.arc(CX, CY, 40, 0, Math.PI * 2);
+    ct.fillStyle = grd;
+    ct.fill();
+
+    t += 0.022;
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+// ══════════════════════════════════════════
+// OPT 10 — Drifting Geometric Planes
+// ══════════════════════════════════════════
+(function(){
+  const cvs = document.getElementById('c10');
+  const ct  = cvs.getContext('2d');
+  const box = document.getElementById('opt10');
+  fit(cvs, box);
+
+  const planes = Array.from({length: 14}, () => ({
+    x:  Math.random() * cvs.width,
+    y:  Math.random() * cvs.height,
+    w:  60 + Math.random() * 120,
+    h:  40 + Math.random() * 80,
+    rot: Math.random() * Math.PI * 2,
+    vr:  (Math.random() - 0.5) * 0.003,
+    vx:  (Math.random() - 0.5) * 0.25,
+    vy:  (Math.random() - 0.5) * 0.2,
+    alpha: 0.03 + Math.random() * 0.07,
+    warm: Math.random() > 0.5,
+  }));
+
+  function draw() {
+    ct.clearRect(0, 0, cvs.width, cvs.height);
+
+    planes.forEach(p => {
+      p.rot += p.vr;
+      p.x += p.vx; p.y += p.vy;
+      if (p.x < -200) p.x = cvs.width + 100;
+      if (p.x > cvs.width + 200) p.x = -100;
+      if (p.y < -200) p.y = cvs.height + 100;
+      if (p.y > cvs.height + 200) p.y = -100;
+
+      ct.save();
+      ct.translate(p.x, p.y);
+      ct.rotate(p.rot);
+      ct.beginPath();
+      ct.rect(-p.w/2, -p.h/2, p.w, p.h);
+      const col = p.warm ? `201,146,79` : `120,80,200`;
+      ct.strokeStyle = `rgba(${col},${p.alpha * 2.5})`;
+      ct.lineWidth = 0.8;
+      ct.stroke();
+      ct.fillStyle = `rgba(${col},${p.alpha * 0.3})`;
+      ct.fill();
+      ct.restore();
+    });
+
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+</script>
+</body>
+</html>
