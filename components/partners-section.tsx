@@ -39,8 +39,8 @@ const partners: Partner[] = [
     role: "Founding Partner",
     photo: "/partner-muskan.jpg",
     initials: "MM",
-    bio: "A delivery leader with five years of shipping software at pace, now working at the intersection of agile practice and applied AI. She turns ambiguous ideas into products that actually reach users, and leads how our ventures are planned, built and released.",
-    credentials: ["PG Diploma, IIIT Bangalore", "SAFe® 6 Agilist", "Certified Scrum Master"],
+    bio: "A delivery leader and AI generalist with more than five years of shipping software at pace. Trained in DevOps at IIIT Bangalore and certified as a SAFe® 6 Agilist and Scrum Master, she has led agile teams through complex delivery while staying close to the engineering underneath — from build and release pipelines to the applied AI now shaping our products. Her strength is turning ambiguous ideas into something people can actually use, and she leads how Anahat One's ventures are planned, built and released.",
+    credentials: ["PG Diploma (DevOps), IIIT Bangalore", "AI Generalist", "SAFe® 6 Agilist", "Certified Scrum Master"],
     linkedin: "https://www.linkedin.com/in/muskanmunun",
   },
 ]
