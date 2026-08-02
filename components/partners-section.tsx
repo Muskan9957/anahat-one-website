@@ -30,8 +30,8 @@ const partners: Partner[] = [
     role: "Founding Partner",
     photo: "/partner-kislay.jpg",
     initials: "KP",
-    bio: "An engineer and builder who has spent a decade bringing hardware to life. Previously at Ather Energy and Micelio, he went on to found Lectrix Technologies, where he took the NDuro electric scooter from first sketch to showroom floor and built the engineering, sourcing and dealer networks behind it.",
-    credentials: ["IIT Gandhinagar", "Founder, Lectrix Technologies", "Ex-Ather Energy"],
+    bio: "An entrepreneur-engineer who has spent more than a decade bringing electric vehicles to life. A veteran of India's EV industry, he was a founding member at Ather Energy — now a listed company — served as CTO at Numeros Motors, and is today Co-Founder and CTO at Lectrix. He has taken some of India's best-known EVs, from the Ather 450X to the Lectrix NDuro, from idea to the road. His strength is carrying companies from ambiguity to clarity through the zero-to-one stage, a journey he has now completed three times over, and he advises early-stage startups along the way. His larger ambition is to reach nirvana through responsible innovation.",
+    credentials: ["IIT Gandhinagar", "Co-Founder & CTO, Lectrix", "Founding member, Ather Energy"],
     linkedin: "https://www.linkedin.com/in/kislay-pankaj",
   },
   {
