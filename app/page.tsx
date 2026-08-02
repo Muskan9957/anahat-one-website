@@ -3,6 +3,7 @@ import { HeroSection } from "@/components/hero-section"
 import { AboutSection } from "@/components/about-section"
 import { VenturesSection } from "@/components/ventures-section"
 import { WhySection } from "@/components/why-section"
+import { PartnersSection } from "@/components/partners-section"
 import { ContactSection } from "@/components/contact-section"
 import { SiteFooter } from "@/components/site-footer"
 import { SilkBackgroundClient } from "@/components/silk-background-client"
@@ -20,6 +21,7 @@ export default function Page() {
         <AboutSection />
         <VenturesSection />
         <WhySection />
+        <PartnersSection />
         <ContactSection />
         <SiteFooter />
       </main>
