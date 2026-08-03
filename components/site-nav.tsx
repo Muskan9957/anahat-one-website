@@ -27,16 +27,29 @@ export function SiteNav() {
     e.preventDefault()
     setOpen(false)
 
-    // The old version measured the target immediately and scrolled to a hand
-    // computed offset. On mobile that landed mid-section: the menu was still
-    // open when we measured, and hiding the URL bar mid-scroll shifted the
-    // target again. Waiting two frames lets the menu close and layout settle,
-    // then scrollIntoView + the sections' CSS scroll-margin does the offset.
+    // Scroll so the section's CONTENT sits just under the header.
+    //
+    // Scrolling to the <section> itself stopped at the section box — and every
+    // section then has its own large top padding, so you landed on ~200px of
+    // empty space with the real content pushed off the bottom of the screen.
+    // Targeting the inner container instead skips that padding.
+    //
+    // The two rAFs let the mobile menu finish closing first, so the header
+    // height we measure is the collapsed one.
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
-        const target = document.querySelector(href)
-        if (!target) return
-        target.scrollIntoView({ behavior: "smooth", block: "start" })
+        if (href === "#top") {
+          window.scrollTo({ top: 0, behavior: "smooth" })
+          return
+        }
+        const section = document.querySelector(href)
+        if (!section) return
+
+        const content = section.firstElementChild ?? section        // inner max-w container
+        const headerH = document.querySelector("header")?.getBoundingClientRect().height ?? 64
+        const y = content.getBoundingClientRect().top + window.scrollY - headerH - 16
+
+        window.scrollTo({ top: Math.max(0, y), behavior: "smooth" })
       })
     })
   }
