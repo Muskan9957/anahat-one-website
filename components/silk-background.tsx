@@ -33,18 +33,48 @@ export function SilkBackground() {
 
     let t = 0
 
+    // Honour the OS "reduce motion" setting — render one static frame instead
+    // of animating.
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+
+    // Assigning canvas.width/height WIPES the canvas. On mobile the URL bar
+    // hides and shows as you scroll, which fires resize constantly — that
+    // repeated wipe was the flicker/glitch. So only rebuild when the WIDTH
+    // actually changes (a real rotation or window resize), and size the height
+    // generously so URL-bar movement never leaves a gap.
+    let lastWidth = 0
+
     function resize() {
       if (!canvas) return
-      canvas.width  = window.innerWidth
-      canvas.height = window.innerHeight
+      const w = window.innerWidth
+      if (w === lastWidth) return          // height-only change → ignore
+      lastWidth = w
+
+      // Match device pixel ratio so the waves aren't soft on phones, but cap it
+      // at 2 to keep the per-frame cost sane.
+      const dpr = Math.min(window.devicePixelRatio || 1, 2)
+      const h = Math.max(window.innerHeight, screen?.height || 0) + 120  // headroom for the URL bar
+
+      canvas.width  = Math.floor(w * dpr)
+      canvas.height = Math.floor(h * dpr)
+      canvas.style.width  = w + "px"
+      canvas.style.height = h + "px"
+      ctx?.setTransform(dpr, 0, 0, dpr, 0, 0)   // draw in CSS pixels
+
+      // Repaint the base colour so the wipe never shows through
+      if (ctx) {
+        ctx.fillStyle = "rgb(8, 7, 18)"
+        ctx.fillRect(0, 0, w, h)
+      }
     }
     resize()
     window.addEventListener("resize", resize)
 
     function draw() {
       if (!canvas || !ctx) return
-      const W = canvas.width
-      const H = canvas.height
+      // CSS-pixel dimensions (the context is scaled by dpr in resize())
+      const W = parseFloat(canvas.style.width)  || window.innerWidth
+      const H = parseFloat(canvas.style.height) || window.innerHeight
 
       // Fade trail — very subtle so content stays readable
       ctx.fillStyle = "rgba(8, 7, 18, 0.18)"
@@ -79,14 +109,10 @@ export function SilkBackground() {
       })
 
       t += 0.012
-      rafRef.current = requestAnimationFrame(draw)
+      if (!reduceMotion) rafRef.current = requestAnimationFrame(draw)
     }
 
-    // Initial dark fill before first frame
-    ctx.fillStyle = "rgb(8, 7, 18)"
-    ctx.fillRect(0, 0, canvas.width, canvas.height)
-
-    draw()
+    draw()   // resize() already painted the base colour
 
     return () => {
       window.removeEventListener("resize", resize)

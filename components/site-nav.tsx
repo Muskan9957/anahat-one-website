@@ -26,17 +26,19 @@ export function SiteNav() {
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault()
     setOpen(false)
-    const targetElement = document.querySelector(href)
-    if (targetElement) {
-      const headerOffset = 80
-      const elementPosition = targetElement.getBoundingClientRect().top
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
+    // The old version measured the target immediately and scrolled to a hand
+    // computed offset. On mobile that landed mid-section: the menu was still
+    // open when we measured, and hiding the URL bar mid-scroll shifted the
+    // target again. Waiting two frames lets the menu close and layout settle,
+    // then scrollIntoView + the sections' CSS scroll-margin does the offset.
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        const target = document.querySelector(href)
+        if (!target) return
+        target.scrollIntoView({ behavior: "smooth", block: "start" })
       })
-    }
+    })
   }
 
   return (
