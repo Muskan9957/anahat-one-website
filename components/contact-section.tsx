@@ -9,16 +9,16 @@ const contacts = [
 
 export function ContactSection() {
   return (
-    <section id="contact" className="scroll-mt-20 border-t border-border py-24 md:py-32">
+    <section id="contact" className="scroll-mt-20 border-t border-border py-14 md:py-32">
       <div className="mx-auto max-w-6xl px-4 md:px-6">
-        <div className="rounded-3xl border border-border bg-card p-8 md:p-16">
-          <div className="grid gap-12 md:grid-cols-12 md:gap-16">
+        <div className="rounded-3xl border border-border bg-card p-6 md:p-16">
+          <div className="grid gap-6 md:grid-cols-12 md:gap-16">
             <div className="md:col-span-6">
               <span className="text-xs font-medium tracking-[0.25em] text-primary">GET IN TOUCH</span>
-              <h2 className="mt-4 text-balance font-serif text-4xl font-medium leading-tight text-foreground md:text-5xl">
+              <h2 className="mt-4 text-balance font-serif text-3xl font-medium leading-tight text-foreground md:text-5xl">
                 Let&apos;s build something remarkable together.
               </h2>
-              <p className="mt-4 text-pretty text-lg leading-relaxed text-muted-foreground">
+              <p className="mt-4 text-pretty text-base leading-relaxed md:text-lg text-muted-foreground">
                 Whether you&apos;re looking to book a stay, partner on a product, or explore what we&apos;re building —
                 we&apos;d love to hear from you.
               </p>

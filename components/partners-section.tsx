@@ -55,24 +55,24 @@ function LinkedInMark() {
 
 export function PartnersSection() {
   return (
-    <section id="partners" className="scroll-mt-20 border-t border-border py-24 md:py-32">
+    <section id="partners" className="scroll-mt-20 border-t border-border py-14 md:py-32">
       <div className="mx-auto max-w-6xl px-4 md:px-6">
         <div className="max-w-2xl">
           <span className="text-xs font-medium tracking-[0.25em] text-primary">LEADERSHIP</span>
-          <h2 className="mt-4 text-balance font-serif text-4xl font-medium leading-tight text-foreground md:text-5xl">
+          <h2 className="mt-4 text-balance font-serif text-3xl font-medium leading-tight text-foreground md:text-5xl">
             The partners behind Anahat One.
           </h2>
-          <p className="mt-4 text-pretty text-lg leading-relaxed text-muted-foreground">
+          <p className="mt-4 text-pretty text-base leading-relaxed md:text-lg text-muted-foreground">
             Two builders — one from hardware, one from software — with a shared belief that the
             details are the product.
           </p>
         </div>
 
-        <div className="mt-14 grid gap-6 md:grid-cols-2">
+        <div className="mt-8 md:mt-14 grid gap-6 md:grid-cols-2">
           {partners.map((p) => (
             <article
               key={p.name}
-              className="flex flex-col rounded-2xl border border-border bg-card p-8 md:p-10"
+              className="flex flex-col rounded-2xl border border-border bg-card p-6 md:p-10"
             >
               <div className="flex items-center gap-5">
                 <div className="relative flex h-20 w-20 shrink-0 items-center justify-center overflow-hidden rounded-full border border-border bg-muted">

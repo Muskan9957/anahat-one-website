@@ -324,14 +324,14 @@ function PlayMark() {
 
 export function VenturesSection() {
   return (
-    <section id="ventures" className="scroll-mt-20 border-t border-border py-24 md:py-32">
+    <section id="ventures" className="scroll-mt-20 border-t border-border py-14 md:py-32">
       <div className="mx-auto max-w-6xl px-4 md:px-6">
         <div className="max-w-2xl">
           <span className="text-xs font-medium tracking-[0.25em] text-primary">OUR VENTURES</span>
-          <h2 className="mt-4 text-balance font-serif text-4xl font-medium leading-tight text-foreground md:text-5xl">
+          <h2 className="mt-4 text-balance font-serif text-3xl font-medium leading-tight text-foreground md:text-5xl">
             A growing family of ventures, one shared heart.
           </h2>
-          <p className="mt-4 text-pretty text-lg leading-relaxed text-muted-foreground">
+          <p className="mt-4 text-pretty text-base leading-relaxed md:text-lg text-muted-foreground">
             Each venture is a world of its own, yet all are built on the same foundation of quality and care.
           </p>
         </div>
